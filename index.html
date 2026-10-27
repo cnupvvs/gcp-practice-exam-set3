@@ -244,7 +244,7 @@ const TOTAL_QUESTIONS = Object.values(QUESTIONS_PER_MODULE).reduce((a,b)=>a+b, 0
 // scores in sync across every device. Leave this as "REPLACE_ME" and the
 // app will show setup instructions the first time you open the page.
 // It should look like: https://YOUR-PROJECT-default-rtdb.firebaseio.com
-const FIREBASE_DB_URL = "REPLACE_ME";
+const FIREBASE_DB_URL = "https://console.firebase.google.com/u/0/project/final-gcp-mook/database/final-gcp-mook-default-rtdb/data/~2F";
 
 /* ===================== STATE ===================== */
 let state = {
@@ -351,7 +351,7 @@ function renderSetup(){
       if (!res.ok) throw new Error('Could not write to that database (HTTP ' + res.status + '). Double-check the Rules step above.');
       document.getElementById('setup-result').innerHTML = `
         <p class="hint" style="color:var(--accent);">Connection works. In the HTML file, find the line<br/>
-          <span class="mono">const FIREBASE_DB_URL = "REPLACE_ME";</span><br/>
+          <span class="mono">const FIREBASE_DB_URL = "https://console.firebase.google.com/u/0/project/final-gcp-mook/database/final-gcp-mook-default-rtdb/data/~2F";</span><br/>
           and replace <span class="mono">REPLACE_ME</span> with:<br/>
           <span class="mono" style="display:block;background:var(--surface-3);padding:10px 12px;border-radius:8px;margin:8px 0;word-break:break-all;">${escapeHtml(url)}</span>
           Save the file, re-upload it to GitHub (commit the change), and reload this page &mdash; the real exam app will load from then on for you and every student.
